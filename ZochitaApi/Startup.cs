@@ -9,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ZochitaApi.TodoData;
 
 namespace ZochitaApi
 {
@@ -25,6 +26,8 @@ namespace ZochitaApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            
+            services.AddSingleton<ITodo, MockTodo>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
